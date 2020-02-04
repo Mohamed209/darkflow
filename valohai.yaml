@@ -13,7 +13,7 @@
       - apt-get install tar
       - apt-get install wget
       - bash train_configs.sh
-      - python predict.py image
+      #- python predict.py image
       - cp -r ckpt/ /valohai/outputs # save weights
 - step:
     name: video_predict
