@@ -3,7 +3,7 @@ import numpy as np
 from darkflow.net.build import TFNet
 options = {"model": "cfg/custom-yolov2.cfg", 
            "load": "bin/yolov2.weights",
-           "batch": 16,
+           "batch": 8,
            "epoch": 50,
            'trainer': 'adam',
            "gpu": 1.0,
