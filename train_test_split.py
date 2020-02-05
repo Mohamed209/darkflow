@@ -6,7 +6,7 @@ import xml.etree.cElementTree as ET
 import imgaug.augmenters as iaa
 import numpy
 import cv2
-numpy.random.bit_generator = numpy.random._bit_generator
+#numpy.random.bit_generator = numpy.random._bit_generator
 seq = iaa.OneOf([
     # Add gaussian noise
     iaa.AdditiveGaussianNoise(scale=(30, 60)),
