@@ -10,6 +10,7 @@
       - pip install opencv-python
       - pip install matplotlib
       - pip install numpy
+      - pip install imgaug
       - apt-get install tar
       - apt-get install wget
       - bash train_configs.sh
