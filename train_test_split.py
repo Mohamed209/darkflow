@@ -6,7 +6,7 @@ import xml.etree.cElementTree as ET
 import imgaug.augmenters as iaa
 import numpy
 import cv2
-
+numpy.random.bit_generator = numpy.random._bit_generator
 seq = iaa.OneOf([
     # Add gaussian noise
     iaa.AdditiveGaussianNoise(scale=(30, 60)),
@@ -39,11 +39,11 @@ def train_test_split(ratio):
             if ch.tag == 'object' and ch.getchildren()[0].text in ['balise', 'varioussignals', 'trafficsignals']:
                 # augment image
                 im = cv2.imread('images/'+element[0])
-                augs = [seq.augment_image(im) for i in range(10)]
+                augs = [seq.augment_image(im) for i in range(5)]
                 for idx, aug in enumerate(augs):  # save augs
-                    cv2.imwrite('train-images/'+'aug'+str(idx)+element[0], aug)
+                    cv2.imwrite('train-images/'+element[0].split('.')[0]+'aug'+str(idx)+'.jpg', aug)
                     shutil.copy('c_annotations/' +
-                                element[1], 'train-labels/'+'aug'+str(idx)+element[1])
+                                element[1], 'train-labels/'+element[1].split('.')[0]+'aug'+str(idx)+'.xml')
                 break
         shutil.copy('images/'+element[0], 'train-images/')
         shutil.copy('c_annotations/' + element[1], 'train-labels/')
