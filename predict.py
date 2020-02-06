@@ -44,7 +44,7 @@ def predict(source):
             cv2.imwrite('/valohai/outputs/'+'prediction' +
                         image, boxing(original_img, results))
     elif source == 'video':  # predict on video
-        videos = os.listdir()
+        videos = os.listdir('videos/)
         for video in videos:
             cap = cv2.VideoCapture(video)
             width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
