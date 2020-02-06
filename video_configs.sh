@@ -6,8 +6,8 @@ apt-get update
 apt-get install ffmpeg  
 apt-get install frei0r-plugins
 mkdir videos/
-ffmpeg -i GP010080.mov -ss 00:00:00 -t 00:00:20 videos/video_1.mp4
-ffmpeg -i GP010080.mov -ss 00:01:30 -t 00:01:50 videos/video_2.mp4
-ffmpeg -i GP010080.mov -ss 00:03:00 -t 00:03:20 videos/video_3.mp4
-ffmpeg -i GP010080.mov -ss 00:10:00 -t 00:10:20 videos/video_4.mp4
-ffmpeg -i GP010080.mov -ss 00:12:00 -t 00:12:20 videos/video_5.mp4
+./ffmpeg -i GP010080.mov -ss 00:00:00 -t 00:00:20 videos/video_1.mp4
+./ffmpeg -i GP010080.mov -ss 00:01:30 -t 00:01:50 videos/video_2.mp4
+./ffmpeg -i GP010080.mov -ss 00:03:00 -t 00:03:20 videos/video_3.mp4
+./ffmpeg -i GP010080.mov -ss 00:10:00 -t 00:10:20 videos/video_4.mp4
+./ffmpeg -i GP010080.mov -ss 00:12:00 -t 00:12:20 videos/video_5.mp4
