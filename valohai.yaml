@@ -21,22 +21,22 @@
     image: tensorflow/tensorflow:1.13.1-gpu-py3
     inputs: # weights
       - name: checkpoint
-        default: datum://017008f3-3bd1-9150-5e08-4ce67f3a0ca5
-      - name: custom-yolov2-5000.index
-        default: datum://017008ef-e0f5-70d5-1332-c6923e1e947f
-      - name: custom-yolov2-5000.profile
-        default: datum://017008f1-78b7-f8ec-b6b7-4449f33e6f68
-      - name: custom-yolov2-5000.meta
-        default: datum://017008f1-3b5a-d80d-0abc-0fb43a65e57f
-      - name: custom-yolov2-5000.data-00000-of-00001
-        default: datum://017008ef-5e97-a1f0-f946-d846ecf1903f
+        default: datum://0170142a-92e6-5648-5ba2-a2700765e53a
+      - name: custom-yolov2-5400.index
+        default: datum://0170142d-1366-6ea8-495a-34c628aa519a
+      - name: custom-yolov2-5400.profile
+        default: datum://0170142c-6613-1557-2e9a-e97c01519223
+      - name: custom-yolov2-5400.meta
+        default: datum://0170142c-4af0-0aa0-6d26-76eca115538c
+      - name: custom-yolov2-5400.data-00000-of-00001
+        default: datum://0170142a-d6fa-65de-df82-26fff6ff82d1
     command:
       - mkdir ckpt/
       - cp /valohai/inputs/checkpoint/checkpoint /valohai/repository/ckpt/
-      - cp /valohai/inputs/custom-yolov2-5000.index/custom-yolov2-5000.index /valohai/repository/ckpt/
-      - cp /valohai/inputs/custom-yolov2-5000.profile/custom-yolov2-5000.profile /valohai/repository/ckpt/
-      - cp /valohai/inputs/custom-yolov2-5000.meta/custom-yolov2-5000.meta /valohai/repository/ckpt/
-      - cp /valohai/inputs/custom-yolov2-5000.data-00000-of-00001/custom-yolov2-5000.data-00000-of-00001 /valohai/repository/ckpt/ # copy new weights
+      - cp /valohai/inputs/custom-yolov2-5400.index/custom-yolov2-5400.index /valohai/repository/ckpt/
+      - cp /valohai/inputs/custom-yolov2-5400.profile/custom-yolov2-5400.profile /valohai/repository/ckpt/
+      - cp /valohai/inputs/custom-yolov2-5400.meta/custom-yolov2-5400.meta /valohai/repository/ckpt/
+      - cp /valohai/inputs/custom-yolov2-5400.data-00000-of-00001/custom-yolov2-5400.data-00000-of-00001 /valohai/repository/ckpt/ # copy new weights
       - pip install Cython
       - apt-get update
       - pip install --upgrade pip
