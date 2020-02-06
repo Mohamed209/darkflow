@@ -38,7 +38,7 @@
       - cp /valohai/inputs/custom-yolov2-5400.meta/custom-yolov2-5400.meta /valohai/repository/ckpt/
       - cp /valohai/inputs/custom-yolov2-5400.data-00000-of-00001/custom-yolov2-5400.data-00000-of-00001 /valohai/repository/ckpt/ # copy new weights
       - pip install Cython
-      - apt-get update
+      - apt-get update && apt-get install wget
       - pip install --upgrade pip
       - apt-get install -y libsm6 libxext6 libxrender-dev
       - apt install libfontconfig1 libxrender1
