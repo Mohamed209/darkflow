@@ -44,9 +44,9 @@ def predict(source):
             cv2.imwrite('/valohai/outputs/'+'prediction' +
                         image, boxing(original_img, results))
     elif source == 'video':  # predict on video
-        videos = os.listdir('videos/)
+        videos = os.listdir('videos/')
         for video in videos:
-            cap = cv2.VideoCapture(video)
+            cap = cv2.VideoCapture('videos/'+video)
             width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
             height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
             fourcc = cv2.VideoWriter_fourcc(*'DIVX')
