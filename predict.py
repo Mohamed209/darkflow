@@ -56,7 +56,7 @@ def predict(source):
 
             if ret == True:
                 frame = np.asarray(frame)
-                results = tfnet2.return_predict(frame)
+                results = tfnet.return_predict(frame)
                 new_frame = boxing(frame, results)
                 # Display the resulting frame
                 out.write(new_frame)
