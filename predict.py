@@ -44,29 +44,31 @@ def predict(source):
             cv2.imwrite('/valohai/outputs/'+'prediction' +
                         image, boxing(original_img, results))
     elif source == 'video':  # predict on video
-        cap = cv2.VideoCapture('GP010080.mov')
-        width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-        height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-        fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-        out = cv2.VideoWriter('/valohai/outputs/GP010080_preds.mov', fourcc,
-                              20.0, (int(width), int(height)))
-        while(True):
-            # Capture frame-by-frame
-            ret, frame = cap.read()
+        videos = os.listdir()
+        for video in videos:
+            cap = cv2.VideoCapture(video)
+            width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
+            height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+            fourcc = cv2.VideoWriter_fourcc(*'DIVX')
+            out = cv2.VideoWriter('/valohai/outputs/predict'+video, fourcc,
+                                  20.0, (int(width), int(height)))
+            while(True):
+                # Capture frame-by-frame
+                ret, frame = cap.read()
 
-            if ret == True:
-                frame = np.asarray(frame)
-                results = tfnet.return_predict(frame)
-                new_frame = boxing(frame, results)
-                # Display the resulting frame
-                out.write(new_frame)
-            else:
-                break
+                if ret == True:
+                    frame = np.asarray(frame)
+                    results = tfnet.return_predict(frame)
+                    new_frame = boxing(frame, results)
+                    # Display the resulting frame
+                    out.write(new_frame)
+                else:
+                    break
 
         # When everything done, release the capture
-        cap.release()
-        out.release()
-        cv2.destroyAllWindows()
+            cap.release()
+            out.release()
+            cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
