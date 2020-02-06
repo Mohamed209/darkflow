@@ -29,7 +29,7 @@
       - name: custom-yolov2-5400.meta
         default: datum://0170142c-4af0-0aa0-6d26-76eca115538c
       - name: custom-yolov2-5400.data-00000-of-00001
-        default: datum://0170142a-d6fa-65de-df82-26fff6ff82d1
+        default: datum://0170142b-91bf-8e44-7b5c-4cfdbdbdd002
     command:
       - mkdir ckpt/
       - cp /valohai/inputs/checkpoint/checkpoint /valohai/repository/ckpt/
